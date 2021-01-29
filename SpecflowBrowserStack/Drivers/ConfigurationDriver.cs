@@ -11,6 +11,7 @@ namespace SpecflowBrowserStack.Drivers
 	{
 		private const string SeleniumBaseUrlConfigFieldName = "seleniumBaseUrl";
 		private readonly Lazy<IConfiguration> _configurationLazy;
+		
 
 		public ConfigurationDriver()
 		{
@@ -18,7 +19,7 @@ namespace SpecflowBrowserStack.Drivers
 		}
 
 		public IConfiguration Configuration => _configurationLazy.Value;
-
+		
 		public string SeleniumBaseUrl => Configuration[SeleniumBaseUrlConfigFieldName];
 
 		public string ProjectName => Configuration["browserstack_projectName"];
@@ -29,7 +30,6 @@ namespace SpecflowBrowserStack.Drivers
 
 		public string BSUsername => Configuration["browserstack_username"];
 		public string BSAccessKey => Configuration["browserstack_access_key"];
-
 		public IEnumerable<IConfigurationSection> Chrome => Configuration.GetSection("chrome").GetChildren();
 		public IEnumerable<IConfigurationSection> Firefox => Configuration.GetSection("firefox").GetChildren();
 		public IEnumerable<IConfigurationSection> Safari => Configuration.GetSection("safari").GetChildren();
@@ -45,5 +45,6 @@ namespace SpecflowBrowserStack.Drivers
 
 			return configurationBuilder.Build();
 		}
+		
 	}
 }

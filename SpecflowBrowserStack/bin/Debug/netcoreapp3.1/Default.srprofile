@@ -52,5 +52,8 @@
     <TestThread id="2">
       <TestAffinity>testpath:Target:Browser_Firefox</TestAffinity>
     </TestThread>
+	  <TestThread id="3">
+		  <TestAffinity>testpath:Target:Browser_iPhone</TestAffinity>
+	  </TestThread>
   </TestThreads>
 </TestProfile>
